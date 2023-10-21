@@ -6,12 +6,12 @@ import { LuLinkedin } from "react-icons/lu";
 import { ImBehance } from "react-icons/im";
 import { lenisContext } from "../App";
 const Hero = () => {
-  const { lenis } = useContext(lenisContext);
+  const { lenis, setBlur } = useContext(lenisContext);
   const slideVariant = {
     visible: {
       y: [0, 0, -4500],
       transition: {
-        duration: 2,
+        duration: 4,
       },
     },
     hidden: {
@@ -28,7 +28,7 @@ const Hero = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: e * 1.4,
+        delay: e * 2.5,
         duration: 0.2,
       },
     }),
@@ -36,68 +36,40 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-screen grid place-items-center overflow-auto"
+      className="w-full min-h-screen h-max grid place-items-center overflow-auto"
       data-scroll-section
     >
       {/* her container starts */}
       <m.div
         initial="initial"
         animate="animate"
-        className="w-full h-screen overflow-hidden"
+        className="w-full min-h-screen overflow-auto"
       >
         {/* sliding up page animation container starts */}
         <m.div
           variants={slideVariant}
           initial={"hidden"}
           animate={"visible"}
-          className="bg-primary w-full h-[150vh] absolute top-0 z-[999999]"
+          className="bg-primary w-full flex items-start justify-center h-[150vh] absolute top-0 z-[999999]"
         >
-          <div className="absolute top-5 right-5 font-poppins">
-            <span>Loading</span>{" "}
-            <m.span>
-              <m.span
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                }}
-                transition={{
-                  repeat: Infinity,
-                  delay: 0,
-                }}
-              >
-                .
-              </m.span>
-              <m.span
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                }}
-                transition={{
-                  repeat: Infinity,
-                  delay: 0.3,
-                }}
-              >
-                .
-              </m.span>
-              <m.span
-                initial={{
-                  opacity: 0,
-                }}
-                animate={{
-                  opacity: 1,
-                }}
-                transition={{
-                  repeat: Infinity,
-                  delay: 0.6,
-                }}
-              >
-                .
-              </m.span>{" "}
-            </m.span>
+          <div className="overflow-hidden w-full h-[75%]   flex justify-center items-center">
+            <m.div
+              initial={{
+                y: 0,
+              }}
+              animate={{
+                scale: [1, 0.5, 0, 50, 100],
+
+                transition: {
+                  duration: 1,
+                  delay: 1.1,
+                  ease: "easeIn",
+                },
+              }}
+              className="font-[900] lg:text-[128px] md:text-[90px] text-[70px] "
+            >
+              Loading...
+            </m.div>
           </div>
         </m.div>
         {/* sliding up page animation container ends */}
