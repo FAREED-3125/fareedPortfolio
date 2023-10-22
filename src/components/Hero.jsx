@@ -161,7 +161,7 @@ const Hero = () => {
           </div>
           {/* social media container ends */}
           {/* email info container starts */}
-          <m.div className="text-primary rotate-[-90deg] translate-x-[50%] absolute right-8 bottom-[200px] font-redhat  items-center gap-2 hidden lg:flex hover:bottom-[210px] transition-all duration-[.3s]">
+          <m.div className="text-primary rotate-[-90deg] translate-x-[50%] absolute right-12 bottom-[200px] font-redhat  items-center gap-2 hidden lg:flex hover:bottom-[210px] transition-all duration-[.3s]">
             <a href="mailto:umarfareed3125@gmail.com">
               umarfareed3125@gmail.com
             </a>

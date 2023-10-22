@@ -102,12 +102,12 @@ const Projects = () => {
       {/* project stayEasy container ends */}
       {/* note worthy porjects starts */}{" "}
       <div className="mt-10">
-        <div className="flex items-center w-full  gap-3">
-          <h3 className="font-[700] text-[20px] text-white ">
-            note worthy projects
-          </h3>
-          {/* thin line */}
-          <div className="h-[1px] flex-grow  bg-primary"></div>
+        <div className="font-[700]  text-primary text-[20px] flex items-center">
+          <div className="h-[1px] flex-grow "></div>
+          <div className="p-3 ">
+            <h3>other Projects</h3>
+          </div>
+          <div className="h-[1px] flex-grow "></div>
         </div>
         <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-5">
           <NoteWorthy
@@ -200,7 +200,7 @@ const ProjectComponent = ({
       {/* image slider */}
       <m.div
         variants={projectvariant}
-        className="md:w-[70%] lg:w-[60%] md:mx-auto lg:m-0"
+        className="md:w-[70%] hidden lg:block lg:w-[60%] md:mx-auto lg:m-0 text-black mt-5"
       >
         <ProjectSlider images={imageArray} />
       </m.div>
@@ -210,6 +210,13 @@ const ProjectComponent = ({
         <div className="w-full  lg:w-[90%] md:mt-[5%] md:mb-[5%]">
           <p className="text-primary text-[12px]">#{number} project</p>
           <h3 className="text-[30px] text-white font-[600]">{title}</h3>
+          {/* image slider */}
+          <m.div
+            variants={projectvariant}
+            className="md:w-[70%] lg:hidden lg:w-[60%] md:mx-auto lg:m-0 text-black mt-5"
+          >
+            <ProjectSlider images={imageArray} />
+          </m.div>
           {/* overview container  */}
           <div className="mt-3">
             <h2 className="text-[15px] text-slate-100 mb-3">overview</h2>
@@ -257,7 +264,6 @@ const ProjectComponent = ({
         </div>{" "}
         {/* project detail section ends */}
       </div>
-      <div className="h-[1px] mx-auto w-[60%] mt-10 bg-slate-50 lg:hidden"></div>
     </m.div>
   );
 };
