@@ -100,6 +100,27 @@ const Projects = () => {
         number={3}
       />
       {/* project stayEasy container ends */}
+      {/* note worthy porjects starts */}{" "}
+      <div className="mt-10">
+        <div className="flex items-center w-full  gap-3">
+          <h3 className="font-[700] text-[20px] text-white ">
+            note worthy projects
+          </h3>
+          {/* thin line */}
+          <div className="h-[1px] flex-grow  bg-primary"></div>
+        </div>
+        <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-5">
+          <NoteWorthy
+            title={"Fitness tracker"}
+            overview={
+              "Workout Buddy is a straightforward fitness tracker app developed using the MERN stack (MongoDB, Express.js, React, Node.js). This minimalistic app is designed for those who want to easily monitor their fitness progress without any complexity."
+            }
+            applink={"https://fitnesstrackerfront.vercel.app/"}
+            gitlink={"https://github.com/FAREED-3125/fitnesstrackerfront"}
+          />
+        </div>
+      </div>
+      {/* note worthy porjects ends */}
     </section>
   );
 };
@@ -122,7 +143,7 @@ const ProjectSlider = ({ images }) => {
               <SwiperSlide key={index}>
                 <div
                   key={index}
-                  className="w-full h-[350px] md:h-[490px] lg:h-[600px] overflow-hidden rounded-lg"
+                  className="w-full h-[350px] md:h-[490px] lg:h-[650px] overflow-hidden rounded-lg"
                 >
                   <img
                     src={image}
@@ -241,3 +262,29 @@ const ProjectComponent = ({
   );
 };
 export default Projects;
+
+const NoteWorthy = ({ gitlink, applink, overview, title }) => {
+  return (
+    <div className="text-slate-300 w-full min-h-[225px] mb-6 bg-black/40 backdrop-blur-[2px] rounded-lg p-3">
+      {" "}
+      {/* projecty heading starts */}{" "}
+      <div className="flex item-center justify-between text-[18px] text-white">
+        <h3>{title}</h3>
+        <div className="flex items-center gap-4 text-[25px]">
+          <a href={applink}>
+            <MdOpenInNew />
+          </a>
+          <a href={gitlink}>
+            <AiFillGithub />
+          </a>
+        </div>
+      </div>
+      {/* projecty heading ends */}
+      {/* project body starts  */}
+      <div className="mt-6 text-[.8rem]  lg:text-[.9rem]">
+        <p>{overview}</p>
+      </div>
+      {/* project body ends */}
+    </div>
+  );
+};

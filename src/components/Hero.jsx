@@ -133,12 +133,13 @@ const Hero = () => {
             {/* view my Projects  container ends */}
           </div>{" "}
           {/* social media container starts */}{" "}
-          <div className="overflow-hidden w-[90%] mx-auto">
+          <div className="overflow-hidden w-[90%] h-[120px] lg:h-max lg:w-[60px]  mx-auto lg:absolute lg:bottom-10 lg:left-8 ">
             {" "}
             <m.div
               variants={textVariant}
               custom={1.5}
-              className="text-primary mt-10 text-[25px] flex gap-5 lg:absolute lg:flex-col lg:bottom-10 lg:left:0 items-center"
+              className="
+              text-primary mt-10 text-[25px] flex gap-5  lg:flex-col items-center"
             >
               <div className="h-[130px] hidden lg:block w-[1px] bg-primary"></div>
 
@@ -160,7 +161,7 @@ const Hero = () => {
           </div>
           {/* social media container ends */}
           {/* email info container starts */}
-          <m.div className="text-primary rotate-[-90deg] absolute right-0 bottom-[200px] font-redhat  items-center gap-2 hidden lg:flex hover:bottom-[210px] transition-all duration-[.3s]">
+          <m.div className="text-primary rotate-[-90deg] translate-x-[50%] absolute right-8 bottom-[200px] font-redhat  items-center gap-2 hidden lg:flex hover:bottom-[210px] transition-all duration-[.3s]">
             <a href="mailto:umarfareed3125@gmail.com">
               umarfareed3125@gmail.com
             </a>
