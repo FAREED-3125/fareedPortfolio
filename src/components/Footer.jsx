@@ -2,7 +2,7 @@ import React from "react";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { LuLinkedin } from "react-icons/lu";
-import { ImBehance } from "react-icons/im";
+import { ImDribbble } from "react-icons/im";
 const Footer = () => {
   return (
     <section id="contact" className="w-full h-screen mt-[100px]">
@@ -35,22 +35,22 @@ const Footer = () => {
         <div className="mb-[30px]">
           <div className="flex gap-10 text-[22px] text-slate-200 items-center justify-center">
             <a
-              href=""
+              href="https://instagram.com/fa_reed._.3125?igshid=OGQ5ZDc2ODk2ZA=="
               className="hover:text-primary hover:scale-[1.2] transition-all duration-[.3s]"
             >
               <BsInstagram />
             </a>
             <a
-              href=""
+              href="https://www.linkedin.com/in/umar-fareed-463463261"
               className="hover:text-primary hover:scale-[1.2] transition-all duration-[.3s]"
             >
               <LuLinkedin />
             </a>
             <a
-              href=""
+              href="https://dribbble.com/FAREED_3125"
               className="hover:text-primary hover:scale-[1.2] transition-all duration-[.3s]"
             >
-              <ImBehance />
+              <ImDribbble />
             </a>
           </div>
           <div className="mt-5 text-[13px] font-redhat text-slate-200 ">

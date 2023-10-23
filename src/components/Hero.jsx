@@ -3,10 +3,10 @@ import { motion as m } from "framer-motion";
 import { BsFillArrowDownRightCircleFill } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { LuLinkedin } from "react-icons/lu";
-import { ImBehance } from "react-icons/im";
+import { ImDribbble } from "react-icons/im";
 import { lenisContext } from "../App";
 const Hero = () => {
-  const { lenis, setBlur } = useContext(lenisContext);
+  const { lenis } = useContext(lenisContext);
   const slideVariant = {
     visible: {
       y: [0, 0, -4500],
@@ -144,17 +144,20 @@ const Hero = () => {
               <div className="h-[130px] hidden lg:block w-[1px] bg-primary"></div>
 
               <div className="d bg-yellow-900 p-3 rounded-full hover:scale-[1.2] transition-all duration-[.3s]">
-                <BsInstagram />
+                <a href="https://instagram.com/fa_reed._.3125?igshid=OGQ5ZDc2ODk2ZA==">
+                  {" "}
+                  <BsInstagram />
+                </a>
               </div>
               <div className="d bg-yellow-900 p-3 rounded-full hover:scale-[1.2] transition-all duration-[.3s]">
-                <a href="">
+                <a href="https://www.linkedin.com/in/umar-fareed-463463261">
                   {" "}
                   <LuLinkedin />
                 </a>
               </div>
               <div className="d bg-yellow-900 p-3 rounded-full hover:scale-[1.2] transition-all duration-[.3s]">
-                <a href="">
-                  <ImBehance />
+                <a href="https://dribbble.com/FAREED_3125">
+                  <ImDribbble />
                 </a>
               </div>
             </m.div>
