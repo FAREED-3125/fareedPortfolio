@@ -10,6 +10,9 @@ import stayimg3 from "../Assets/stayeasy/Frame 8.jpg";
 import stayimg4 from "../Assets/stayeasy/Frame 9.jpg";
 import pixelimg1 from "../Assets/pixels/Frame 1pixelsmobile.jpg";
 import pixelimg2 from "../Assets/pixels/pixellap.jpg";
+import inoimg1 from "../Assets/upload/mobile.jpg";
+import inoimg2 from "../Assets/upload/tab view.jpg";
+import inoimg3 from "../Assets/upload/tap view.jpg";
 import { AiFillGithub, AiOutlineSwapLeft } from "react-icons/ai";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { MdOpenInNew } from "react-icons/md";
@@ -49,6 +52,16 @@ const Projects = () => {
     "responsive design",
     "tailwind css",
   ];
+
+  const inomation = [inoimg1, inoimg2, inoimg3];
+
+  const inoTools = [
+    "react js",
+    "framer motion",
+    "responsive design",
+    "tailwind css",
+    "swiper js",
+  ];
   return (
     <section
       id="projects"
@@ -63,6 +76,19 @@ const Projects = () => {
         <div className="h-[1px] flex-grow bg-slate-300"></div>
       </div>
       {/* project heading ends */}
+      {/* inomation project starts  */}
+      <ProjectComponent
+        title={"Inomation: the animation company website"}
+        overview={
+          "Inomation is more than just a website; it's my personal playground for exploring the exciting realms of animation, React, and Framer Motion. It's a project born out of a passion for creativity and a desire to enhance my skills for my personal portfolio."
+        }
+        imageArray={inomation}
+        toolused={inoTools}
+        gitlink={"https://github.com/FAREED-3125/Innomation"}
+        applink={"https://innomation.vercel.app/"}
+        number={1}
+      />
+      {/* inomation project ends */}
       {/* project flimo container starts */}
       <ProjectComponent
         title={"Flimo: the movies review app"}
@@ -75,7 +101,7 @@ const Projects = () => {
         toolused={flimoTools}
         gitlink={"https://github.com/FAREED-3125/flimo"}
         applink={"https://flimo.vercel.app/"}
-        number={1}
+        number={2}
       />
       {/* project flimo container ends */}
       {/* project stayeasy container starts */}
@@ -86,7 +112,7 @@ const Projects = () => {
         toolused={stayEasytools}
         gitlink={"https://github.com/FAREED-3125/stayEasyFrontend"}
         applink={"https://stay-easy-app.vercel.app/"}
-        number={2}
+        number={3}
       />
       {/* project stayEasy container ends */}
       {/* project stayeasy container starts */}
@@ -97,7 +123,7 @@ const Projects = () => {
         toolused={pixelTools}
         gitlink={"https://github.com/FAREED-3125/Pixels"}
         applink={"https://pixels-seven.vercel.app/"}
-        number={3}
+        number={4}
       />
       {/* project stayEasy container ends */}
       {/* note worthy porjects starts */}{" "}
@@ -143,7 +169,7 @@ const ProjectSlider = ({ images }) => {
               <SwiperSlide key={index}>
                 <div
                   key={index}
-                  className="w-full h-[350px] md:h-[490px] lg:h-[650px] overflow-hidden rounded-lg"
+                  className="w-[90%] mx-auto h-[350px] md:h-[490px] lg:h-[650px] overflow-hidden rounded-lg"
                 >
                   <img
                     src={image}
