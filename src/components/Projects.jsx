@@ -169,7 +169,7 @@ const ProjectSlider = ({ images }) => {
               <SwiperSlide key={index}>
                 <div
                   key={index}
-                  className="w-[90%] mx-auto h-[350px] md:h-[490px] lg:h-[650px] overflow-hidden rounded-lg"
+                  className="lg:w-[90%] w-full mx-auto h-[350px] md:h-[490px] lg:h-[650px] overflow-hidden rounded-lg"
                 >
                   <img
                     src={image}
