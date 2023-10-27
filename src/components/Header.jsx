@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { MdDownloadForOffline } from "react-icons/md";
 import { lenisContext } from "../App";
-import resume from "../Assets/Resume/umar fareed.I {f}.pdf";
+import resume from "../Assets/Resume/Umar fareed Resume.pdf";
 
 const menuItems = ["about", "projects", "contact"];
 
