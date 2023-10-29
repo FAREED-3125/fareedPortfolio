@@ -76,19 +76,6 @@ const Projects = () => {
         <div className="h-[1px] flex-grow bg-slate-300"></div>
       </div>
       {/* project heading ends */}
-      {/* inomation project starts  */}
-      <ProjectComponent
-        title={"Inomation: the animation company website"}
-        overview={
-          "Inomation is more than just a website; it's my personal playground for exploring the exciting realms of animation, React, and Framer Motion. It's a project born out of a passion for creativity and a desire to enhance my skills for my personal portfolio."
-        }
-        imageArray={inomation}
-        toolused={inoTools}
-        gitlink={"https://github.com/FAREED-3125/Innomation"}
-        applink={"https://innomation.vercel.app/"}
-        number={1}
-      />
-      {/* inomation project ends */}
       {/* project flimo container starts */}
       <ProjectComponent
         title={"Flimo: the movies review app"}
@@ -101,7 +88,7 @@ const Projects = () => {
         toolused={flimoTools}
         gitlink={"https://github.com/FAREED-3125/flimo"}
         applink={"https://flimo.vercel.app/"}
-        number={2}
+        number={1}
       />
       {/* project flimo container ends */}
       {/* project stayeasy container starts */}
@@ -112,9 +99,22 @@ const Projects = () => {
         toolused={stayEasytools}
         gitlink={"https://github.com/FAREED-3125/stayEasyFrontend"}
         applink={"https://stay-easy-app.vercel.app/"}
-        number={3}
+        number={2}
       />
       {/* project stayEasy container ends */}
+      {/* inomation project starts  */}
+      <ProjectComponent
+        title={"Inomation: the animation company website"}
+        overview={
+          "Inomation is more than just a website; it's my personal playground for exploring the exciting realms of animation, React, and Framer Motion. It's a project born out of a passion for creativity and a desire to enhance my skills for my personal portfolio."
+        }
+        imageArray={inomation}
+        toolused={inoTools}
+        gitlink={"https://github.com/FAREED-3125/Innomation"}
+        applink={"https://innomation.vercel.app/"}
+        number={3}
+      />
+      {/* inomation project ends */}
       {/* project stayeasy container starts */}
       <ProjectComponent
         title={"Pixel: the tech news app"}
