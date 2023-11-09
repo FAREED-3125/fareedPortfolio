@@ -33,21 +33,29 @@ const About = () => {
             {/* thin line */}
             <div className="h-[1px] flex-grow  bg-primary"></div>
           </div>
-          <div>
-            <p className="text-slate-300 text-[13px] lg:text-[18px] mt-5 font-[500]">
-              I embarked on my journey into the world of web development and
-              design in July 2022 with zero prior skills or experience. Today,
-              I've come a long way, equipped with the ability to develop
-              full-stack web applications. To demonstrate my progress, I've
-              designed and built a movie app named{" "}
-              <span className="text-primary">"Flimo" </span> using technologies
-              such as <span className="text-primary">React </span>, Framer
-              Motion, and <span className="text-primary">tailwind CSS </span>.
-              Additionally, I've created a comprehensive hotel management
-              application called
-              <span className="text-primary"> "Stayeasy" </span> using the MERN
-              stack. My commitment to bringing innovative ideas to the internet
-              has been the driving force behind my rapid skill development.
+          <div className="text-slate-300 text-[13px] lg:text-[18px] mt-5 font-[500]">
+            <p>
+              In July 2022, I embarked on a journey into the world of web
+              development with no prior experience or skills. Fast forward to
+              today, I've transformed my capabilities, and I'm now proficient in
+              creating vibrant and fully functional{" "}
+              <span className="text-primary"> full-stack web applications</span>
+              . My toolkit includes expertise in popular technology stacks like
+              <span className="text-primary">MERN </span>(MongoDB, Express,
+              React, Node.js), and I have mastered the fundamentals of web
+              development with HTML and CSS. Additionally, I excel in crafting
+              beautiful, responsive user interfaces with the power of{" "}
+              <span className="text-primary">Tailwind CSS</span> . Along the
+              way, I've completed multiple projects, honing my skills and
+              gaining hands-on experience.
+            </p>
+            <br />
+            <p>
+              When I'm not immersed in the digital realm of coding and design, I
+              enjoy a healthy dose of physical activity. Whether it's a game of
+              football or cricket, or engaging in various forms of exercise, I
+              find balance and inspiration in the physical world, which
+              complements my creative and technical pursuits.
             </p>
             <p className="text-slate-300 text-[14px] lg:text-[18px] mt-5 lg:mt-10">
               <span className="text-primary">Currently </span>, I am eagerly
