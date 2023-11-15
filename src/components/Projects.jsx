@@ -8,8 +8,10 @@ import stayimg1 from "../Assets/stayeasy/Frame 6.jpg";
 import stayimg2 from "../Assets/stayeasy/Frame 7.jpg";
 import stayimg3 from "../Assets/stayeasy/Frame 8.jpg";
 import stayimg4 from "../Assets/stayeasy/Frame 9.jpg";
-import pixelimg1 from "../Assets/pixels/Frame 1pixelsmobile.jpg";
-import pixelimg2 from "../Assets/pixels/pixellap.jpg";
+import jobiimg from "../Assets/Jobibo/Frame 12.jpg";
+import jobiimg1 from "../Assets/Jobibo/Frame 17.jpg";
+import jobiimg2 from "../Assets/Jobibo/Frame 18.jpg";
+import jobiimg3 from "../Assets/Jobibo/Frame 19.jpg";
 import inoimg1 from "../Assets/upload/mobile.jpg";
 import inoimg2 from "../Assets/upload/tab view.jpg";
 import inoimg3 from "../Assets/upload/tap view.jpg";
@@ -45,12 +47,16 @@ const Projects = () => {
   ];
 
   //pixels project utils
-  const pixels = [pixelimg1, pixelimg2];
-  const pixelTools = [
+  const Jobibo = [jobiimg, jobiimg1, jobiimg2, jobiimg3];
+  const jobibotools = [
     "react js",
     "framer motion",
     "responsive design",
     "tailwind css",
+    "Jwt",
+    "render",
+    "vercel",
+    "Context api",
   ];
 
   const inomation = [inoimg1, inoimg2, inoimg3];
@@ -76,6 +82,18 @@ const Projects = () => {
         <div className="h-[1px] flex-grow bg-slate-300"></div>
       </div>
       {/* project heading ends */}
+      {/* project jobibo container starts */}
+      <ProjectComponent
+        title={"Jobibo: The job search app"}
+        overview={`
+Welcome to Jobibo, your ultimate job searching app. With dual account types for job seekers and recruiters, Jobibo streamlines the process. Job seekers can create profiles, explore tailored job listings, and apply seamlessly. Recruiters can showcase companies, post jobs, and manage applications efficiently.`}
+        imageArray={Jobibo}
+        toolused={jobibotools}
+        gitlink={"https://github.com/FAREED-3125/jobibo-client"}
+        applink={"https://jobibo-client.vercel.app/"}
+        number={1}
+      />
+      {/* project jobibo container ends */}
       {/* project flimo container starts */}
       <ProjectComponent
         title={"Flimo: the movies review app"}
@@ -88,7 +106,7 @@ const Projects = () => {
         toolused={flimoTools}
         gitlink={"https://github.com/FAREED-3125/flimo"}
         applink={"https://flimo.vercel.app/"}
-        number={1}
+        number={2}
       />
       {/* project flimo container ends */}
       {/* project stayeasy container starts */}
@@ -99,7 +117,7 @@ const Projects = () => {
         toolused={stayEasytools}
         gitlink={"https://github.com/FAREED-3125/stayEasyFrontend"}
         applink={"https://stay-easy-app.vercel.app/"}
-        number={2}
+        number={3}
       />
       {/* project stayEasy container ends */}
       {/* inomation project starts  */}
@@ -112,20 +130,9 @@ const Projects = () => {
         toolused={inoTools}
         gitlink={"https://github.com/FAREED-3125/Innomation"}
         applink={"https://innomation.vercel.app/"}
-        number={3}
-      />
-      {/* inomation project ends */}
-      {/* project stayeasy container starts */}
-      <ProjectComponent
-        title={"Pixel: the tech news app"}
-        overview={` Pixels is a web application developed as a personal project aimed at enhancing frontend development skills. This web app is designed using modern web technologies and frameworks such as React.js, Framer Motion, Tailwind CSS, and responsive design principles. While Pixels does not serve a specific business or practical purpose, it serves as a learning tool and a playground for experimenting with these technologies.`}
-        imageArray={pixels}
-        toolused={pixelTools}
-        gitlink={"https://github.com/FAREED-3125/Pixels"}
-        applink={"https://pixels-seven.vercel.app/"}
         number={4}
       />
-      {/* project stayEasy container ends */}
+      {/* inomation project ends */}
       {/* note worthy porjects starts */}{" "}
       <div className="mt-10">
         <div className="font-[700]  text-primary text-[20px] flex items-center">
@@ -136,6 +143,12 @@ const Projects = () => {
           <div className="h-[1px] flex-grow "></div>
         </div>
         <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-5">
+          <NoteWorthy
+            title={"Pixel: the tech news app "}
+            overview={` Pixels is a web application developed as a personal project aimed at enhancing frontend development skills. This web app is designed using modern web technologies and frameworks such as React.js, Framer Motion, Tailwind CSS, and responsive design principles. While Pixels does not serve a specific business or practical purpose, it serves as a learning tool and a playground for experimenting with these technologies.`}
+            gitlink={"https://github.com/FAREED-3125/Pixels"}
+            applink={"https://pixels-seven.vercel.app/"}
+          />
           <NoteWorthy
             title={"Fitness tracker"}
             overview={
