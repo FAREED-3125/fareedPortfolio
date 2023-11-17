@@ -41,7 +41,7 @@ const About = () => {
               creating vibrant and fully functional{" "}
               <span className="text-primary"> full-stack web applications</span>
               . My toolkit includes expertise in popular technology stacks like
-              <span className="text-primary">MERN </span>(MongoDB, Express,
+              <span className="text-primary"> MERN </span>(MongoDB, Express,
               React, Node.js), and I have mastered the fundamentals of web
               development with HTML and CSS. Additionally, I excel in crafting
               beautiful, responsive user interfaces with the power of{" "}

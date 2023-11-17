@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-screen h-max grid place-items-center overflow-auto"
+      className="w-full min-h-screen h-[700px] grid place-items-center overflow-auto"
       data-scroll-section
     >
       {/* her container starts */}
@@ -50,7 +50,7 @@ const Hero = () => {
           variants={slideVariant}
           initial={"hidden"}
           animate={"visible"}
-          className="bg-primary w-full flex items-start justify-center h-[150vh] absolute top-0 z-[999999]"
+          className="bg-primary w-full flex items-start justify-center h-[150vh] fixed top-0 z-[999999]"
         >
           <div className="overflow-hidden w-full h-[75%]   flex justify-center items-center">
             <m.div
@@ -74,7 +74,7 @@ const Hero = () => {
         </m.div>
         {/* sliding up page animation container ends */}
         {/* Text-container starts */}
-        <div className="overflow-hidden w-full h-full absolute top-0  flex justify-center flex-col gap-0">
+        <div className="overflow-hidden w-full h-[700px] absolute top-[6%]  flex justify-center flex-col gap-0">
           <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto">
             <div className="overflow-hidden">
               <m.div

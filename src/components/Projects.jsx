@@ -57,6 +57,9 @@ const Projects = () => {
     "render",
     "vercel",
     "Context api",
+    "node js",
+    "express js",
+    "api",
   ];
 
   const inomation = [inoimg1, inoimg2, inoimg3];
@@ -142,7 +145,7 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
           </div>
           <div className="h-[1px] flex-grow "></div>
         </div>
-        <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-3 mt-5">
+        <div className="flex flex-col gap-5 md:grid md:grid-cols-2 lg:grid-cols-3 mt-5">
           <NoteWorthy
             title={"Pixel: the tech news app "}
             overview={` Pixels is a web application developed as a personal project aimed at enhancing frontend development skills. This web app is designed using modern web technologies and frameworks such as React.js, Framer Motion, Tailwind CSS, and responsive design principles. While Pixels does not serve a specific business or practical purpose, it serves as a learning tool and a playground for experimenting with these technologies.`}
@@ -156,6 +159,14 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
             }
             applink={"https://fitnesstrackerfront.vercel.app/"}
             gitlink={"https://github.com/FAREED-3125/fitnesstrackerfront"}
+          />
+          <NoteWorthy
+            title={"Mini Instagram clone"}
+            overview={
+              "To create a simplified version of Instagram where users can upload their photos, view a feed of uploaded photos, and interact with them by liking or commenting."
+            }
+            applink={"https://insta-assignment.vercel.app/"}
+            gitlink={"https://github.com/FAREED-3125/Insta-Assignment"}
           />
         </div>
       </div>
@@ -247,8 +258,12 @@ const ProjectComponent = ({
       <div className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px] lg:absolute min-h-[470px] mt-4 lg:z-[99] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300">
         {/* project detail section starts */}
         <div className="w-full  lg:w-[90%] md:mt-[5%] md:mb-[5%]">
-          <p className="text-primary text-[12px]">#{number} project</p>
-          <h3 className="text-[30px] text-white font-[600]">{title}</h3>
+          <p className="text-primary text-[12px] md:mx-auto md:w-[70%] lg:mx-0">
+            #{number} project
+          </p>
+          <h3 className="text-[30px] text-white font-[600] md:mx-auto md:w-[70%] lg:mx-0">
+            {title}
+          </h3>
           {/* image slider */}
           <m.div
             variants={projectvariant}
@@ -257,14 +272,14 @@ const ProjectComponent = ({
             <ProjectSlider images={imageArray} />
           </m.div>
           {/* overview container  */}
-          <div className="mt-3">
+          <div className="mt-3 md:mx-auto md:w-[70%] lg:mx-0">
             <h2 className="text-[15px] text-slate-100 mb-3">overview</h2>
             <p className="text-[12px] md:text-[15px] md:w-[70%] lg:w-full font-[500]">
               {overview}
             </p>
           </div>
           {/* tool used container  */}
-          <div className="mt-4  md:w-[70%] lg:w-full">
+          <div className="mt-4  lg:w-full md:mx-auto md:w-[70%] lg:mx-0">
             <h2 className="text-[15px] text-slate-100 mb-3">Tools used</h2>
             <div className="flex  flex-wrap gap-3 ">
               {toolused.map((tool, index) => (
@@ -278,7 +293,7 @@ const ProjectComponent = ({
             </div>
           </div>
           {/* links container  */}
-          <div className="font-redhat text-[14px] text-slate-200 mt-5 flex items-center gap-5">
+          <div className="font-redhat text-[14px] text-slate-200 mt-5 flex items-center gap-5 md:mx-auto md:w-[70%] lg:mx-0">
             <a
               href={`${applink}`}
               target="_blank"
