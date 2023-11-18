@@ -32,6 +32,9 @@ const Header = () => {
       <m.div
         className="w-full h-[70px] lg:h-[90px] fixed top-0 flex items-center justify-end bg-slate-900/50 backdrop-blur-[2px] z-[9999]"
         animate={!fixed ? { y: "-100%" } : { y: 0 }}
+        transition={{
+          type: "linear",
+        }}
       >
         {/* mobile resume alert blinker start  */}
         <m.div

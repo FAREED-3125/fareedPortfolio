@@ -74,7 +74,7 @@ const Hero = () => {
         </m.div>
         {/* sliding up page animation container ends */}
         {/* Text-container starts */}
-        <div className="overflow-hidden w-full h-[700px] absolute top-[6%]  flex justify-center flex-col gap-0">
+        <div className="overflow-hidden w-full h-[700px] absolute top-[50%] translate-y-[-45%] lg:translate-y-[-50%]  flex justify-center flex-col gap-0">
           <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto">
             <div className="overflow-hidden">
               <m.div
