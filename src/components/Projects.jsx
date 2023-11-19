@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import flimoimage1 from "../Assets/Flimo/Frame 3.jpg";
@@ -243,15 +243,18 @@ const ProjectComponent = ({
     },
   };
 
+  const glowCont = useRef();
+
   const divX = useMotionValue(0);
   const divy = useMotionValue(0);
   const { cursorSize } = useContext(GlowcursorContext);
 
   const handleMouseIn = (e) => {
-    const { left, top } = e.target.getBoundingClientRect();
+    const { left, top } = glowCont.current.getBoundingClientRect();
     divX.set(e.clientX - left);
     divy.set(e.clientY - top);
   };
+
   return (
     <m.div
       initial="hidden"
@@ -266,20 +269,23 @@ const ProjectComponent = ({
         <ProjectSlider images={imageArray} />
       </m.div>
       {/* project brief  */}
-      <div className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px]  h-max mt-4 lg:z-[99999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group ">
+      <div
+        className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px]  h-max mt-4 lg:z-[99999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group "
+        onMouseMove={handleMouseIn}
+        ref={glowCont}
+        onMouseEnter={() => cursorSize.set(0)}
+        onMouseLeave={() => cursorSize.set(20)}
+      >
         {/* project detail section starts */}
-        <div
-          className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative "
-          onMouseMove={handleMouseIn}
-          onMouseEnter={() => cursorSize.set(0)}
-          onMouseLeave={() => cursorSize.set(20)}
-        >
+        <div className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden ">
           <m.div
-            className="absolute w-full h-full rounded-lg hidden lg:block 
+            className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
             opacity-0
-            group-hover:opacity-[.5] top-0 left-0 pointer-events-none"
+            group-hover:opacity-[1] blur-[110px] pointer-events-none  bg-primary "
             style={{
-              background: useMotionTemplate`radial-gradient(circle at ${divX}px ${divy}px,rgba(255, 219, 15, 0.3) 10% , transparent,transparent )`,
+              top: useMotionTemplate`${divy}px`,
+              left: useMotionTemplate`${divX}px`,
+              transform: "translate(-50%,-50%)",
             }}
           />
           <p className="text-primary text-[12px] md:mx-auto md:w-[70%] lg:mx-0">
