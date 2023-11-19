@@ -266,7 +266,7 @@ const ProjectComponent = ({
         <ProjectSlider images={imageArray} />
       </m.div>
       {/* project brief  */}
-      <div className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px]  h-max mt-4 lg:z-[99] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group ">
+      <div className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px]  h-max mt-4 lg:z-[99999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group ">
         {/* project detail section starts */}
         <div
           className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative "
@@ -277,7 +277,7 @@ const ProjectComponent = ({
           <m.div
             className="absolute w-full h-full rounded-lg hidden lg:block 
             opacity-0
-            group-hover:opacity-[.5] top-0 left-0"
+            group-hover:opacity-[.5] top-0 left-0 pointer-events-none"
             style={{
               background: useMotionTemplate`radial-gradient(circle at ${divX}px ${divy}px,rgba(255, 219, 15, 0.3) 10% , transparent,transparent )`,
             }}
