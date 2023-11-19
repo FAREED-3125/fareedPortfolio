@@ -277,7 +277,7 @@ const ProjectComponent = ({
           <m.div
             className="absolute w-full h-full rounded-lg hidden lg:block 
             opacity-0
-            group-hover:opacity-[.3] top-0 left-0"
+            group-hover:opacity-[.5] top-0 left-0"
             style={{
               background: useMotionTemplate`radial-gradient(circle at ${divX}px ${divy}px,rgba(255, 219, 15, 0.3) 10% , transparent,transparent )`,
             }}
