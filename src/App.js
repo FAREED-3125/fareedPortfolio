@@ -23,7 +23,7 @@ const App = () => {
 
     requestAnimationFrame(raf);
   });
-
+  console.log("this");
   return (
     <>
       <lenisContext.Provider value={{ lenis }}>

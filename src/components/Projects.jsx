@@ -111,6 +111,7 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
         gitlink={"https://github.com/FAREED-3125/flimo"}
         applink={"https://flimo.vercel.app/"}
         number={2}
+        imgpos="right"
       />
       {/* project flimo container ends */}
       {/* project stayeasy container starts */}
@@ -135,6 +136,7 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
         gitlink={"https://github.com/FAREED-3125/Innomation"}
         applink={"https://innomation.vercel.app/"}
         number={4}
+        imgpos="right"
       />
       {/* inomation project ends */}
       {/* note worthy porjects starts */}{" "}
@@ -176,7 +178,7 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
   );
 };
 
-const ProjectSlider = ({ images }) => {
+const ProjectSlider = ({ images, imgpos }) => {
   return (
     <div>
       <div className="w-full mx-auto">
@@ -205,15 +207,28 @@ const ProjectSlider = ({ images }) => {
               </SwiperSlide>
             );
           })}
-          <div className=" w-full h-[60px] flex items-center gap-4 relative">
+          <div
+            className=" w-full h-[60px] flex items-center gap-4 relative  lg:w-[90%] mx-auto "
+            style={{
+              justifyContent: imgpos === "right" ? "flex-end" : "flex-start",
+            }}
+          >
             <div className=" prev-button p-2 bg-primary text-[28px] w-max rounded-full cursor-pointer">
               <AiOutlineSwapLeft />
             </div>
             <div className="next-button p-2 bg-primary text-[28px] w-max rounded-full cursor-pointer">
               <AiOutlineSwapRight />
             </div>
-            <div className="absolute top-1 right-2 text-[12px] text-primary">
-              <p className="flex items-center">slide {"   >>>"}</p>
+            <div
+              className="absolute top-1 right-2 text-[12px] text-primary"
+              style={{
+                left: imgpos === "right" && ".5rem",
+                right: imgpos === "left" && ".5rem",
+              }}
+            >
+              <p className="flex items-center">
+                {imgpos === "right" ? "<<< slide" : "slide >>>"}
+              </p>
             </div>
           </div>
         </Swiper>
@@ -230,6 +245,7 @@ const ProjectComponent = ({
   gitlink,
   applink,
   number,
+  imgpos = "left",
 }) => {
   const projectvariant = {
     visible: {
@@ -259,25 +275,31 @@ const ProjectComponent = ({
     <m.div
       initial="hidden"
       whileInView="visible"
-      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative "
+      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative flex items-center justify-start "
+      style={{
+        justifyContent: imgpos == "left" ? "flex-start" : "flex-end",
+      }}
     >
       {/* image slider */}
       <m.div
         variants={projectvariant}
         className="md:w-[70%] hidden lg:block lg:w-[60%] md:mx-auto lg:m-0 text-black mt-5"
       >
-        <ProjectSlider images={imageArray} />
+        <ProjectSlider images={imageArray} imgpos={imgpos} />
       </m.div>
       {/* project brief  */}
       <div
-        className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px]  h-max mt-4 lg:z-[99999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group "
+        className={
+          "w-full lg:w-[60%] top-[50%]   bg-slate-900/90 backdrop-blur-[10px]  h-max mt-4 lg:z-[999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group " +
+          `${imgpos === "left" ? "lg:left-[45%]" : "lg:right-[45%]"}`
+        }
         onMouseMove={handleMouseIn}
         ref={glowCont}
         onMouseEnter={() => cursorSize.set(0)}
         onMouseLeave={() => cursorSize.set(20)}
       >
         {/* project detail section starts */}
-        <div className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden p-2">
+        <div className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden p-[3px]">
           <m.div
             className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
             opacity-0
@@ -302,9 +324,9 @@ const ProjectComponent = ({
             <ProjectSlider images={imageArray} />
           </m.div>
           {/* overview container  */}
-          <div className="mt-3 md:mx-auto md:w-[70%] lg:mx-0">
+          <div className="mt-3 md:mx-auto md:w-[70%] lg:w-full lg:mx-0">
             <h2 className="text-[15px] text-slate-100 mb-3">overview</h2>
-            <p className="text-[12px] md:text-[15px] md:w-[70%] lg:w-full font-[500]">
+            <p className="text-[12px] md:text-[15px] md:w-[%] lg:w-full font-[500]">
               {overview}
             </p>
           </div>
@@ -354,9 +376,36 @@ const ProjectComponent = ({
 export default Projects;
 
 const NoteWorthy = ({ gitlink, applink, overview, title }) => {
+  const glowCont = useRef();
+
+  const divX = useMotionValue(0);
+  const divy = useMotionValue(0);
+  const { cursorSize } = useContext(GlowcursorContext);
+
+  const handleMouseIn = (e) => {
+    const { left, top } = glowCont.current.getBoundingClientRect();
+    divX.set(e.clientX - left);
+    divy.set(e.clientY - top);
+  };
   return (
-    <div className="text-slate-300 w-full min-h-[225px] mb-6 bg-black/40 backdrop-blur-[2px] rounded-lg p-3">
+    <div
+      className="text-slate-300 w-full min-h-[225px] mb-6 bg-black/40 backdrop-blur-[2px] rounded-lg p-3 ring-[1px] ring-gray-700 relative group overflow-hidden cursor-default"
+      onMouseMove={handleMouseIn}
+      ref={glowCont}
+      onMouseEnter={() => cursorSize.set(0)}
+      onMouseLeave={() => cursorSize.set(20)}
+    >
       {" "}
+      <m.div
+        className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
+            opacity-0
+            group-hover:opacity-[1] blur-[110px] pointer-events-none  bg-primary "
+        style={{
+          top: useMotionTemplate`${divy}px`,
+          left: useMotionTemplate`${divX}px`,
+          transform: "translate(-50%,-50%)",
+        }}
+      />
       {/* projecty heading starts */}{" "}
       <div className="flex item-center justify-between text-[18px] text-white">
         <h3>{title}</h3>
@@ -371,7 +420,7 @@ const NoteWorthy = ({ gitlink, applink, overview, title }) => {
       </div>
       {/* projecty heading ends */}
       {/* project body starts  */}
-      <div className="mt-6 text-[.8rem]  lg:text-[.9rem]">
+      <div className="mt-6 text-[.8rem] text-gray3400  lg:text-[.9rem]">
         <p>{overview}</p>
       </div>
       {/* project body ends */}

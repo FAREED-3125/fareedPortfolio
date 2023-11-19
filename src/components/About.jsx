@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion as m } from "framer-motion";
 import { VscDebugBreakpointLog } from "react-icons/vsc";
+import { GlowcursorContext } from "./Glowcursor";
 const About = () => {
   const skills = [
     "HTML,CSS",
@@ -18,6 +19,8 @@ const About = () => {
     "render",
     "figma (for rough designing)",
   ];
+
+  const { cursorSize } = useContext(GlowcursorContext);
   return (
     <section
       data-scroll-section
@@ -33,7 +36,11 @@ const About = () => {
             {/* thin line */}
             <div className="h-[1px] flex-grow  bg-primary"></div>
           </div>
-          <div className="text-slate-300 text-[13px] lg:text-[18px] mt-5 font-[500]">
+          <div
+            className="text-slate-300 text-[13px] lg:text-[18px] mt-5 font-[500]"
+            onMouseEnter={() => cursorSize.set(70)}
+            onMouseLeave={() => cursorSize.set(20)}
+          >
             <p>
               In July 2022, I embarked on a journey into the world of web
               development with no prior experience or skills. Fast forward to
@@ -70,7 +77,11 @@ const About = () => {
         {/* skill detail starts  */}
         <div className="lg:w-[30%] w-full gap-3 h-full">
           {/* <Section 1 start */}
-          <div className="h-[50%]">
+          <div
+            className="h-[50%]"
+            onMouseEnter={() => cursorSize.set(70)}
+            onMouseLeave={() => cursorSize.set(20)}
+          >
             <div className="flex items-center w-full  gap-3">
               <h3 className="font-[700] text-[20px] text-white">Skills</h3>
               <div className="h-[1px] flex-grow  bg-primary"></div>
@@ -90,7 +101,11 @@ const About = () => {
           </div>{" "}
           {/* <Section 1 end */}
           {/* <Section 2 start */}
-          <div className="h-[50%] mt-10">
+          <div
+            className="h-[50%] mt-10"
+            onMouseEnter={() => cursorSize.set(70)}
+            onMouseLeave={() => cursorSize.set(20)}
+          >
             <div className="flex items-center w-full  gap-3">
               <h3 className="font-[700] text-[20px] ">tools using</h3>
               <div className="h-[1px] flex-grow  bg-primary"></div>
