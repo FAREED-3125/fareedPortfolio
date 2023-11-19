@@ -134,13 +134,11 @@ const Header = () => {
               custom={1.4}
               className="w-[150px] h-[90%] ring-2 ring-primary rounded-lg flex items-center justify-center text-primary gap-4 font-redhat cursor-pointer"
             >
-              <p className="font-[500]">Resume</p>
-              <p className="text-[18px]">
+              <span className="font-[500]">Resume</span>
+              <span className="text-[18px]">
                 {" "}
-                <a href="">
-                  <MdDownloadForOffline />
-                </a>
-              </p>
+                <MdDownloadForOffline />
+              </span>
             </m.a>
           </div>
           {/* Download resume container ends */}
@@ -231,13 +229,11 @@ const SideMenu = ({ isMenuOpen, setMenuOpen }) => {
               custom={1.4}
               className="w-[150px] h-[60px] ring-2 ring-slate-900 rounded-lg flex items-center justify-center text-slate-900 gap-4 mt-5 font-redhat cursor-pointer"
             >
-              <p className="font-[500]">Resume</p>
-              <p className="text-[18px]">
+              <span className="font-[500]">Resume</span>
+              <span className="text-[18px]">
                 {" "}
-                <a href="">
-                  <MdDownloadForOffline />
-                </a>
-              </p>
+                <MdDownloadForOffline />
+              </span>
             </m.a>
           </div>
           {/* Download resume container ends */}

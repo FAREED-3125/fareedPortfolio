@@ -5,7 +5,9 @@ import { BsInstagram } from "react-icons/bs";
 import { LuLinkedin } from "react-icons/lu";
 import { ImDribbble } from "react-icons/im";
 import { lenisContext } from "../App";
+import { GlowcursorContext } from "./Glowcursor";
 const Hero = () => {
+  const { cursorSize } = useContext(GlowcursorContext);
   const { lenis } = useContext(lenisContext);
   const slideVariant = {
     visible: {
@@ -36,21 +38,21 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-screen h-[700px] grid place-items-center overflow-auto"
+      className="w-full min-h-screen h-[700px] grid place-items-center   overflow-auto"
       data-scroll-section
     >
       {/* her container starts */}
       <m.div
         initial="initial"
         animate="animate"
-        className="w-full min-h-screen overflow-auto"
+        className="w-full min-h-screen overflow-auto grid place-items-center"
       >
         {/* sliding up page animation container starts */}
         <m.div
           variants={slideVariant}
           initial={"hidden"}
           animate={"visible"}
-          className="bg-primary w-full flex items-start justify-center h-[150vh] fixed top-0 z-[999999]"
+          className="bg-primary w-full flex items-start justify-center h-[150vh] fixed top-0 z-[999999] "
         >
           <div className="overflow-hidden w-full h-[75%]   flex justify-center items-center">
             <m.div
@@ -74,8 +76,8 @@ const Hero = () => {
         </m.div>
         {/* sliding up page animation container ends */}
         {/* Text-container starts */}
-        <div className="overflow-hidden w-full h-[700px] absolute top-[50%] translate-y-[-45%] lg:translate-y-[-50%]  flex justify-center flex-col gap-0">
-          <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto">
+        <div className="overflow-hidden w-full h-[700px] lg:mt-10    flex justify-center flex-col gap-0">
+          <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto ">
             <div className="overflow-hidden">
               <m.div
                 variants={textVariant}
@@ -85,7 +87,11 @@ const Hero = () => {
                 Hi, my name is
               </m.div>
             </div>
-            <div className="overflow-hidden">
+            <div
+              className="overflow-hidden"
+              onMouseEnter={() => cursorSize.set(150)}
+              onMouseLeave={() => cursorSize.set(20)}
+            >
               <m.div
                 variants={textVariant}
                 custom={1.1}
@@ -94,7 +100,11 @@ const Hero = () => {
                 <p>Umar fareed</p>
               </m.div>
             </div>{" "}
-            <div className="overflow-hidden">
+            <div
+              className="overflow-hidden"
+              onMouseEnter={() => cursorSize.set(150)}
+              onMouseLeave={() => cursorSize.set(20)}
+            >
               <m.div
                 variants={textVariant}
                 custom={1.2}
@@ -103,7 +113,11 @@ const Hero = () => {
                 <p className="text-slate-400">and I build things for web.</p>
               </m.div>
             </div>{" "}
-            <div className="overflow-hidden">
+            <div
+              className="overflow-hidden"
+              onMouseEnter={() => cursorSize.set(60)}
+              onMouseLeave={() => cursorSize.set(20)}
+            >
               <m.div variants={textVariant} custom={1.3} className="mt-3">
                 <p className="text-[15px]  text-slate-200 lg:text-[16px] md:w-[70%] lg:w-[65%]">
                   I'm a Mern stack developer have done projects in building and
@@ -124,16 +138,14 @@ const Hero = () => {
                 <p>view my projects</p>
                 <p className="text-[18px]">
                   {" "}
-                  <div>
-                    <BsFillArrowDownRightCircleFill />
-                  </div>
+                  <BsFillArrowDownRightCircleFill />
                 </p>
               </m.div>
             </div>
             {/* view my Projects  container ends */}
           </div>{" "}
           {/* social media container starts */}{" "}
-          <div className="overflow-hidden w-[90%] h-[120px] lg:h-max lg:w-[60px]  mx-auto lg:absolute lg:bottom-10 lg:left-8 ">
+          <div className="overflow-hidden w-[90%] h-[120px] lg:h-max lg:w-[60px]  mx-auto lg:absolute lg:bottom-10 lg:left-8">
             {" "}
             <m.div
               variants={textVariant}

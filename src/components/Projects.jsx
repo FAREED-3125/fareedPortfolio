@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import flimoimage1 from "../Assets/Flimo/Frame 3.jpg";
@@ -18,7 +18,8 @@ import inoimg3 from "../Assets/upload/tap view.jpg";
 import { AiFillGithub, AiOutlineSwapLeft } from "react-icons/ai";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { MdOpenInNew } from "react-icons/md";
-import { motion as m } from "framer-motion";
+import { motion as m, useMotionTemplate, useMotionValue } from "framer-motion";
+import Glowcursor, { GlowcursorContext } from "./Glowcursor";
 const Projects = () => {
   //Flimo project utils
   const flimo = [flimoimage1, flimoimage2, flimoimage3];
@@ -241,11 +242,21 @@ const ProjectComponent = ({
       opacity: 0,
     },
   };
+
+  const divX = useMotionValue(0);
+  const divy = useMotionValue(0);
+  const { cursorSize } = useContext(GlowcursorContext);
+
+  const handleMouseIn = (e) => {
+    const { left, top } = e.target.getBoundingClientRect();
+    divX.set(e.clientX - left);
+    divy.set(e.clientY - top);
+  };
   return (
     <m.div
       initial="hidden"
       whileInView="visible"
-      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative"
+      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative "
     >
       {/* image slider */}
       <m.div
@@ -255,9 +266,22 @@ const ProjectComponent = ({
         <ProjectSlider images={imageArray} />
       </m.div>
       {/* project brief  */}
-      <div className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px] lg:absolute min-h-[470px] mt-4 lg:z-[99] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300">
+      <div className="w-full lg:w-[60%] top-[50%] left-[50%] lg:left-[45%] bg-slate-900/90 backdrop-blur-[5px]  h-max mt-4 lg:z-[99] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group ">
         {/* project detail section starts */}
-        <div className="w-full  lg:w-[90%] md:mt-[5%] md:mb-[5%]">
+        <div
+          className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative "
+          onMouseMove={handleMouseIn}
+          onMouseEnter={() => cursorSize.set(0)}
+          onMouseLeave={() => cursorSize.set(20)}
+        >
+          <m.div
+            className="absolute w-full h-full rounded-lg hidden lg:block 
+            opacity-0
+            group-hover:opacity-[.3] top-0 left-0"
+            style={{
+              background: useMotionTemplate`radial-gradient(circle at ${divX}px ${divy}px,rgba(255, 219, 15, 0.3) 10% , transparent,transparent )`,
+            }}
+          />
           <p className="text-primary text-[12px] md:mx-auto md:w-[70%] lg:mx-0">
             #{number} project
           </p>

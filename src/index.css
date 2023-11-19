@@ -32,4 +32,9 @@ html.lenis {
 }
 ::-webkit-scrollbar {
   display: none;
+  color: rgb(255, 235, 122);
+}
+
+body {
+  cursor: none;
 }

@@ -27,10 +27,10 @@ const SliderSkills = () => {
     <section
       data-scroll-section
       ref={sliderref}
-      className="h-[50vh] bg-primary grid place-items-center"
+      className="min-h-[180px] md:min-h-[200px] lg:min-h-[220px] bg-primary grid place-items-center"
     >
-      <div className="w-full md:w-[80%] mx-auto lg:w-[80%] overflow-hidden bg-primary flex flex-col  gap-2 p-2">
-        <div className="flex items-center text-[50px]  text-primary bg-slate-900 font-[900] w-full h-full gap-2">
+      <div className="w-full md:w-[80%] mx-auto lg:w-[80%] overflow-hidden bg-primary flex flex-col  gap-2 p-2 ">
+        <div className="flex items-center text-[50px]  text-primary bg-slate-900 font-[900] w-full h-  gap-2">
           <m.div
             className=" flex items-center  gap-2"
             style={{

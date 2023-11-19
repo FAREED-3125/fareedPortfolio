@@ -6,6 +6,7 @@ import SliderSkills from "./components/SliderSkills";
 import Header from "./components/Header";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import Glowcursor from "./components/Glowcursor";
 export const lenisContext = createContext();
 const App = () => {
   const lenis = new Lenis({
@@ -26,12 +27,14 @@ const App = () => {
   return (
     <>
       <lenisContext.Provider value={{ lenis }}>
-        <Header />
-        <Hero />
-        <SliderSkills />
-        <About />
-        <Projects />
-        <Footer />
+        <Glowcursor>
+          <Header />
+          <Hero />
+          <SliderSkills />
+          <About />
+          <Projects />
+          <Footer />
+        </Glowcursor>
       </lenisContext.Provider>
     </>
   );
