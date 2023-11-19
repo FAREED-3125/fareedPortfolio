@@ -277,7 +277,7 @@ const ProjectComponent = ({
         onMouseLeave={() => cursorSize.set(20)}
       >
         {/* project detail section starts */}
-        <div className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden ">
+        <div className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden p-2">
           <m.div
             className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
             opacity-0
