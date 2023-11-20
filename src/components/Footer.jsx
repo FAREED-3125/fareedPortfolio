@@ -7,7 +7,7 @@ import { GlowcursorContext } from "./Glowcursor";
 const Footer = () => {
   const { cursorSize } = useContext(GlowcursorContext);
   return (
-    <section id="contact" className="w-full h-screen mt-[100px]">
+    <section id="contact" className="w-full min-h-screen h-[700px] mt-[100px]">
       {/* contact container starts  */}{" "}
       <div className="w-[90%] mx-auto h-full flex items-center flex-col justify-between">
         {/* <contact heading starts  */}
@@ -20,8 +20,11 @@ const Footer = () => {
           <div className="h-[1px] flex-grow bg-slate-300"></div>
         </div>
         {/* <contact heading ends */}
-        <div className="w-full md:w-[60%] lg:w-[50%] mx-auto text-center text-[15px] md:text-[16px] font-[500] text-slate-300 mt-5" onMouseEnter={() => cursorSize.set(70)}
-        onMouseLeave = {() => cursorSize.set(20)}>
+        <div
+          className="w-full md:w-[60%] lg:w-[50%] mx-auto text-center text-[15px] md:text-[16px] font-[500] text-slate-300 mt-5"
+          onMouseEnter={() => cursorSize.set(70)}
+          onMouseLeave={() => cursorSize.set(20)}
+        >
           <p>
             Feel free to reach out to me through the mail button below, and
             let's start building the future of the web together.

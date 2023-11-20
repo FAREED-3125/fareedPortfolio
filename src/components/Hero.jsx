@@ -88,7 +88,7 @@ const Hero = () => {
               </m.div>
             </div>
             <div
-              className="overflow-hidden"
+              className="overflow-hidden "
               onMouseEnter={() => cursorSize.set(150)}
               onMouseLeave={() => cursorSize.set(20)}
             >

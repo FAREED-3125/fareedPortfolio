@@ -18,8 +18,15 @@ import inoimg3 from "../Assets/upload/tap view.jpg";
 import { AiFillGithub, AiOutlineSwapLeft } from "react-icons/ai";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { MdOpenInNew } from "react-icons/md";
-import { motion as m, useMotionTemplate, useMotionValue } from "framer-motion";
+import {
+  motion as m,
+  useMotionTemplate,
+  useMotionValue,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Glowcursor, { GlowcursorContext } from "./Glowcursor";
+import UseDimension from "../utils/UseDimension";
 const Projects = () => {
   //Flimo project utils
   const flimo = [flimoimage1, flimoimage2, flimoimage3];
@@ -277,6 +284,17 @@ const ProjectComponent = ({
     divy.set(e.clientY - top);
   };
 
+  const projectRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: projectRef,
+    offset: ["start end", "start start"],
+  });
+
+  const leftX = useTransform(scrollYProgress, [0, 0.5], [-100, 0]);
+  const rightX = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 1]);
+
   return (
     <m.div
       initial="hidden"
@@ -285,16 +303,21 @@ const ProjectComponent = ({
       style={{
         justifyContent: imgpos == "left" ? "flex-start" : "flex-end",
       }}
+      ref={projectRef}
     >
       {/* image slider */}
       <m.div
         variants={projectvariant}
         className="md:w-[70%] hidden lg:block lg:w-[60%] md:mx-auto lg:m-0 text-black mt-5"
+        style={{
+          translateX: imgpos === "right" ? rightX : leftX,
+          opacity: opacity,
+        }}
       >
         <ProjectSlider images={imageArray} imgpos={imgpos} />
       </m.div>
       {/* project brief  */}
-      <div
+      <m.div
         className={
           "w-full lg:w-[60%] top-[50%]   bg-slate-900/90 backdrop-blur-[10px]  h-max mt-4 lg:z-[999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group " +
           `${imgpos === "left" ? "lg:right-[0px]" : "lg:left-[0px]"}`
@@ -375,7 +398,7 @@ const ProjectComponent = ({
           </div>
         </div>{" "}
         {/* project detail section ends */}
-      </div>
+      </m.div>
     </m.div>
   );
 };
@@ -393,8 +416,26 @@ const NoteWorthy = ({ gitlink, applink, overview, title }) => {
     divX.set(e.clientX - left);
     divy.set(e.clientY - top);
   };
+  const screenWidth = UseDimension();
   return (
-    <div
+    <m.div
+      initial={
+        screenWidth < 740
+          ? {
+              y: 100,
+            }
+          : {}
+      }
+      whileInView={
+        screenWidth < 740
+          ? {
+              y: 0,
+            }
+          : {}
+      }
+      transition={{
+        type: "linear",
+      }}
       className="text-slate-300 w-full min-h-[225px] mb-6 bg-black/40 backdrop-blur-[2px] rounded-lg p-3 ring-[1px] ring-gray-700 relative group overflow-hidden cursor-default"
       onMouseMove={handleMouseIn}
       ref={glowCont}
@@ -430,6 +471,6 @@ const NoteWorthy = ({ gitlink, applink, overview, title }) => {
         <p>{overview}</p>
       </div>
       {/* project body ends */}
-    </div>
+    </m.div>
   );
 };

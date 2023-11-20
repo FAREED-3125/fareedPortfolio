@@ -185,7 +185,7 @@ const SideMenu = ({ isMenuOpen, setMenuOpen }) => {
       variants={menuVariant}
       initial="initial"
       animate={isMenuOpen ? "animate" : "initial"}
-      className="w-[70%] right-0 min-h-screen overflow-auto bg-primary backdrop-blur-[5px] fixed top-0 z-[9999] grid place-items-center"
+      className="w-[70%] right-0 min-h-screen overflow-auto bg-primary backdrop-blur-[5px] fixed top-0 z-[999999] grid place-items-center"
     >
       <div>
         {/* menu items container starts */}{" "}
