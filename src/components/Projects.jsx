@@ -82,7 +82,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="mt-[100px]  min-h-screen w-[90%] lg:w-[80%]  mx-auto "
+      className="mt-[50px]  min-h-screen w-[90%] lg:w-[80%]  mx-auto "
     >
       {/* project heading start  */}{" "}
       <div className="font-[700]  text-primary text-[24px] flex items-center">
@@ -203,7 +203,7 @@ const ProjectSlider = ({ images, imgpos }) => {
               <SwiperSlide key={index}>
                 <div
                   key={index}
-                  className="lg:w-[90%] w-full aspect-square mx-auto lg:h-[650px] overflow-hidden rounded-lg"
+                  className="lg:w-[80%] w-full aspect-square mx-auto lg:h-[550px] overflow-hidden rounded-lg"
                   style={{
                     margin: imgpos === "right" ? "0 0 0 auto" : "0 auto 0 0 ",
                   }}
@@ -220,7 +220,7 @@ const ProjectSlider = ({ images, imgpos }) => {
             );
           })}
           <div
-            className=" w-full h-[60px] flex items-center gap-4 relative  lg:w-[90%] "
+            className=" w-full h-[60px] flex items-center gap-4 relative  lg:w-[80%] "
             style={{
               justifyContent: imgpos === "right" ? "flex-end" : "flex-start",
               margin: imgpos === "right" ? "0 0 0 auto" : "0 auto 0 0 ",
@@ -295,11 +295,13 @@ const ProjectComponent = ({
   const rightX = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 1]);
 
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
+
   return (
     <m.div
       initial="hidden"
       whileInView="visible"
-      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative flex items-center justify-start  "
+      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative flex items-center justify-start "
       style={{
         justifyContent: imgpos == "left" ? "flex-start" : "flex-end",
       }}
@@ -319,16 +321,24 @@ const ProjectComponent = ({
       {/* project brief  */}
       <m.div
         className={
-          "w-full lg:w-[60%] top-[50%]   bg-slate-900/90 backdrop-blur-[10px]  h-max mt-4 lg:z-[999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group " +
-          `${imgpos === "left" ? "lg:right-[0px]" : "lg:left-[0px]"}`
+          "w-full lg:w-[60%] top-[50%]   bg-slate-900/90 backdrop-blur-[10px]  h-max mt-4 lg:z-[999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group "
         }
+        style={{
+          left: imgpos === "right" && "0px",
+          right: imgpos === "left" && "0px",
+        }}
         onMouseMove={handleMouseIn}
         ref={glowCont}
         onMouseEnter={() => cursorSize.set(0)}
         onMouseLeave={() => cursorSize.set(20)}
       >
         {/* project detail section starts */}
-        <div className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden p-[3px]">
+        <m.div
+          className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden p-[3px]"
+          style={{
+            scale,
+          }}
+        >
           <m.div
             className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
             opacity-0
@@ -396,7 +406,7 @@ const ProjectComponent = ({
               </span>
             </a>
           </div>
-        </div>{" "}
+        </m.div>{" "}
         {/* project detail section ends */}
       </m.div>
     </m.div>

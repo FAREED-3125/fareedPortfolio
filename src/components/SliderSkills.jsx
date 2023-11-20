@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { motion as m, useScroll, useTransform } from "framer-motion";
+import { GlowcursorContext } from "./Glowcursor";
 
 const SliderSkills = () => {
   const sliderref = useRef();
@@ -23,11 +24,14 @@ const SliderSkills = () => {
     [0, 0.4, 0.8, 1],
     [0, -50, -100, -150]
   );
+  const { cursorSize } = useContext(GlowcursorContext);
   return (
     <section
       data-scroll-section
       ref={sliderref}
       className="min-h-[180px] md:min-h-[200px] lg:min-h-[220px] bg-primary grid place-items-center"
+      onMouseEnter={() => cursorSize.set(200)}
+      onMouseLeave={() => cursorSize.set(20)}
     >
       <div className="w-full md:w-[80%] mx-auto lg:w-[80%] overflow-hidden bg-primary flex flex-col  gap-2 p-2 ">
         <div className="flex items-center text-[50px]  text-primary bg-slate-900 font-[900] w-full h-  gap-2">
