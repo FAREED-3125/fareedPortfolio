@@ -37,8 +37,8 @@ const About = () => {
             <div className="h-[1px] flex-grow  bg-primary"></div>
           </div>
           <div
-            className="text-slate-300 text-[13px] lg:text-[18px] mt-5 font-[500]"
-            onMouseEnter={() => cursorSize.set(70)}
+            className="text-slate-300 text-[15px] lg:text-[18px] mt-5 font-[500]"
+            onMouseEnter={() => cursorSize.set(90)}
             onMouseLeave={() => cursorSize.set(20)}
           >
             <p>
@@ -75,11 +75,11 @@ const About = () => {
         {/* About details ends */}
 
         {/* skill detail starts  */}
-        <div className="lg:w-[30%] w-full gap-3 h-full">
+        <div className="lg:w-[30%] text-[15px] lg:text-[18px] w-full gap-3 h-full">
           {/* <Section 1 start */}
           <div
             className="h-[50%]"
-            onMouseEnter={() => cursorSize.set(70)}
+            onMouseEnter={() => cursorSize.set(90)}
             onMouseLeave={() => cursorSize.set(20)}
           >
             <div className="flex items-center w-full  gap-3">

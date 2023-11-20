@@ -197,20 +197,26 @@ const ProjectSlider = ({ images, imgpos }) => {
                 <div
                   key={index}
                   className="lg:w-[90%] w-full aspect-square mx-auto lg:h-[650px] overflow-hidden rounded-lg"
+                  style={{
+                    margin: imgpos === "right" ? "0 0 0 auto" : "0 auto 0 0 ",
+                  }}
                 >
                   <img
                     src={image}
                     className="w-full h-full object-fill"
                     alt="image not found"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </SwiperSlide>
             );
           })}
           <div
-            className=" w-full h-[60px] flex items-center gap-4 relative  lg:w-[90%] mx-auto "
+            className=" w-full h-[60px] flex items-center gap-4 relative  lg:w-[90%] "
             style={{
               justifyContent: imgpos === "right" ? "flex-end" : "flex-start",
+              margin: imgpos === "right" ? "0 0 0 auto" : "0 auto 0 0 ",
             }}
           >
             <div className=" prev-button p-2 bg-primary text-[28px] w-max rounded-full cursor-pointer">
@@ -275,7 +281,7 @@ const ProjectComponent = ({
     <m.div
       initial="hidden"
       whileInView="visible"
-      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative flex items-center justify-start "
+      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative flex items-center justify-start  "
       style={{
         justifyContent: imgpos == "left" ? "flex-start" : "flex-end",
       }}
@@ -291,7 +297,7 @@ const ProjectComponent = ({
       <div
         className={
           "w-full lg:w-[60%] top-[50%]   bg-slate-900/90 backdrop-blur-[10px]  h-max mt-4 lg:z-[999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group " +
-          `${imgpos === "left" ? "lg:left-[45%]" : "lg:right-[45%]"}`
+          `${imgpos === "left" ? "lg:right-[0px]" : "lg:left-[0px]"}`
         }
         onMouseMove={handleMouseIn}
         ref={glowCont}
@@ -326,7 +332,7 @@ const ProjectComponent = ({
           {/* overview container  */}
           <div className="mt-3 md:mx-auto md:w-[70%] lg:w-full lg:mx-0">
             <h2 className="text-[15px] text-slate-100 mb-3">overview</h2>
-            <p className="text-[12px] md:text-[15px] md:w-[%] lg:w-full font-[500]">
+            <p className="text-[15px] md:text-[15px] md:w-[%] lg:w-full font-[500]">
               {overview}
             </p>
           </div>
@@ -345,7 +351,7 @@ const ProjectComponent = ({
             </div>
           </div>
           {/* links container  */}
-          <div className="font-redhat text-[14px] text-slate-200 mt-5 flex items-center gap-5 md:mx-auto md:w-[70%] lg:mx-0">
+          <div className="font-redhat text-[14px] text-slate-200 mt-6 flex items-center gap-5 md:mx-auto md:w-[70%] lg:mx-0">
             <a
               href={`${applink}`}
               target="_blank"

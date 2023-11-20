@@ -22,7 +22,7 @@ const Glowcursor = ({ children }) => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  });
+  }, []);
   return (
     <GlowcursorContext.Provider value={{ cursorSize }}>
       {children}
