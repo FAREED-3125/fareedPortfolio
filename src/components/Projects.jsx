@@ -416,26 +416,9 @@ const NoteWorthy = ({ gitlink, applink, overview, title }) => {
     divX.set(e.clientX - left);
     divy.set(e.clientY - top);
   };
-  const screenWidth = UseDimension();
+
   return (
     <m.div
-      initial={
-        screenWidth < 740
-          ? {
-              y: 100,
-            }
-          : {}
-      }
-      whileInView={
-        screenWidth < 740
-          ? {
-              y: 0,
-            }
-          : {}
-      }
-      transition={{
-        type: "linear",
-      }}
       className="text-slate-300 w-full min-h-[225px] mb-6 bg-black/40 backdrop-blur-[2px] rounded-lg p-3 ring-[1px] ring-gray-700 relative group overflow-hidden cursor-default"
       onMouseMove={handleMouseIn}
       ref={glowCont}
