@@ -76,7 +76,7 @@ const Hero = () => {
         </m.div>
         {/* sliding up page animation container ends */}
         {/* Text-container starts */}
-        <div className="overflow-hidden w-full h-[700px] lg:mt-10    flex justify-center flex-col gap-0">
+        <div className="overflow-hidden w-full h-[700px] mt-10 lg:mt-10    flex justify-center flex-col gap-0">
           <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto ">
             <div className="overflow-hidden">
               <m.div
@@ -145,7 +145,7 @@ const Hero = () => {
             {/* view my Projects  container ends */}
           </div>{" "}
           {/* social media container starts */}{" "}
-          <div className="overflow-hidden w-[90%] h-[120px] lg:h-max lg:w-[60px]  mx-auto lg:absolute lg:bottom-10 lg:left-8">
+          <div className="overflow-hidden w-[90%] md:w-[85%] h-[120px] lg:h-max lg:w-[60px]  mx-auto lg:absolute lg:bottom-10 lg:left-8">
             {" "}
             <m.div
               variants={textVariant}
