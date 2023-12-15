@@ -212,7 +212,6 @@ const ProjectSlider = ({ images, imgpos }) => {
                     src={image}
                     className="w-full h-full object-fill"
                     alt="image not found"
-                    loading="lazy"
                     decoding="async"
                   />
                 </div>

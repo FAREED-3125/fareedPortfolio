@@ -38,7 +38,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="w-full min-h-screen h-[700px] grid place-items-center   overflow-auto"
+      className="w-full min-h-screen grid place-items-center   overflow-auto "
       data-scroll-section
     >
       {/* her container starts */}
@@ -128,7 +128,7 @@ const Hero = () => {
               </m.div>
             </div>
             {/* view my Projects container starts */}
-            <div className="overflow-hidden h-max p-1">
+            <div className="overflow-hidden h-max p-1 flex items-end gap-5">
               <m.div
                 variants={textVariant}
                 custom={1.4}
@@ -187,6 +187,9 @@ const Hero = () => {
         {/* Text-container ends */}
       </m.div>{" "}
       {/* her container ends */}
+      <div className="lg:border border-primary border-b-transparent w-[100px] h-[20px] flex items-center justify-center text-primary font-redhat absolute bottom-[50px]  lg:bottom-[-5px] right-[-40px] rotate-[-90deg] text-[10px] lg:rotate-0 lg:right-[200px]">
+        scroll down
+      </div>
     </section>
   );
 };
