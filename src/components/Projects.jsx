@@ -1,88 +1,23 @@
-import React, { useContext, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import flimoimage1 from "../Assets/Flimo/Frame 3.jpg";
-import flimoimage2 from "../Assets/Flimo/Frame 4.jpg";
-import flimoimage3 from "../Assets/Flimo/Frame 5.jpg";
-import stayimg1 from "../Assets/stayeasy/Frame 6.jpg";
-import stayimg2 from "../Assets/stayeasy/Frame 7.jpg";
-import stayimg3 from "../Assets/stayeasy/Frame 8.jpg";
-import stayimg4 from "../Assets/stayeasy/Frame 9.jpg";
-import jobiimg from "../Assets/Jobibo/Frame 12.jpg";
-import jobiimg1 from "../Assets/Jobibo/Frame 17.jpg";
-import jobiimg2 from "../Assets/Jobibo/Frame 18.jpg";
-import jobiimg3 from "../Assets/Jobibo/Frame 19.jpg";
-import inoimg1 from "../Assets/upload/mobile.jpg";
-import inoimg2 from "../Assets/upload/tab view.jpg";
-import inoimg3 from "../Assets/upload/tap view.jpg";
-import { AiFillGithub, AiOutlineSwapLeft } from "react-icons/ai";
-import { AiOutlineSwapRight } from "react-icons/ai";
-import { MdOpenInNew } from "react-icons/md";
+import React from "react";
 import {
-  motion as m,
-  useMotionTemplate,
-  useMotionValue,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import Glowcursor, { GlowcursorContext } from "./Glowcursor";
-import UseDimension from "../utils/UseDimension";
+  Jobibo,
+  StayEasy,
+  flimo,
+  flimoTools,
+  gamespace,
+  gamestools,
+  inoTools,
+  inomation,
+  jobibotools,
+  stayEasytools,
+} from "../utils/ProjectReq";
+import ProjectComponent from "./ProjectComponent";
+import NoteWorthy from "./NoteWorthy";
 const Projects = () => {
-  //Flimo project utils
-  const flimo = [flimoimage1, flimoimage2, flimoimage3];
-  const flimoTools = [
-    "react js",
-    "tmdb api",
-    "tailwind css",
-    "custom hooks",
-    "framer motion",
-    "responsive designs",
-    "vercel",
-    "swiper js",
-  ];
-
-  //stayEasy project utils
-  const StayEasy = [stayimg1, stayimg2, stayimg3, stayimg4];
-  const stayEasytools = [
-    "react js",
-    "express framework",
-    "node js",
-    "context api",
-    "vercel",
-    "render",
-    "mongodb",
-    "response design",
-  ];
-
-  //pixels project utils
-  const Jobibo = [jobiimg, jobiimg1, jobiimg2, jobiimg3];
-  const jobibotools = [
-    "react js",
-    "framer motion",
-    "responsive design",
-    "tailwind css",
-    "Jwt",
-    "render",
-    "vercel",
-    "Context api",
-    "node js",
-    "express js",
-    "api",
-  ];
-
-  const inomation = [inoimg1, inoimg2, inoimg3];
-
-  const inoTools = [
-    "react js",
-    "framer motion",
-    "responsive design",
-    "tailwind css",
-    "swiper js",
-  ];
   return (
     <section
       id="projects"
-      className="mt-[50px]  min-h-screen w-[90%] lg:w-[80%]  mx-auto "
+      className="mt-[50px]  min-h-[100dvh] w-[90%] lg:w-[80%]  mx-auto "
     >
       {/* project heading start  */}{" "}
       <div className="font-[700]  text-primary text-[24px] flex items-center">
@@ -92,19 +27,17 @@ const Projects = () => {
         </div>
         <div className="h-[1px] flex-grow bg-slate-300"></div>
       </div>
-      {/* project heading ends */}
-      {/* project jobibo container starts */}
+      {/* project heading ends */} {/* project stayeasy container starts */}
       <ProjectComponent
-        title={"Jobibo: The job search app"}
-        overview={`
-Welcome to Jobibo, your ultimate job searching app. With dual account types for job seekers and recruiters, Jobibo streamlines the process. Job seekers can create profiles, explore tailored job listings, and apply seamlessly. Recruiters can showcase companies, post jobs, and manage applications efficiently.`}
-        imageArray={Jobibo}
-        toolused={jobibotools}
-        gitlink={"https://github.com/FAREED-3125/jobibo-client"}
-        applink={"https://jobibo-client.vercel.app/"}
+        title={"stayEasy: the Hotel management app"}
+        overview={` StayEasy is a powerful, responsive, and user-friendly hotel management web application that optimizes operations for hotels of all sizes, helping them deliver a seamless and enjoyable experience to their guests`}
+        imageArray={StayEasy}
+        toolused={stayEasytools}
+        gitlink={"https://github.com/FAREED-3125/stayEasyFrontend"}
+        applink={"https://stay-easy-app.vercel.app/"}
         number={1}
       />
-      {/* project jobibo container ends */}
+      {/* project stayEasy container ends */}
       {/* project flimo container starts */}
       <ProjectComponent
         title={"Flimo: the movies review app"}
@@ -121,17 +54,32 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
         imgpos="right"
       />
       {/* project flimo container ends */}
-      {/* project stayeasy container starts */}
+      {/* project jobibo container starts */}
       <ProjectComponent
-        title={"stayEasy: the Hotel management app"}
-        overview={` StayEasy is a powerful, responsive, and user-friendly hotel management web application that optimizes operations for hotels of all sizes, helping them deliver a seamless and enjoyable experience to their guests`}
-        imageArray={StayEasy}
-        toolused={stayEasytools}
-        gitlink={"https://github.com/FAREED-3125/stayEasyFrontend"}
-        applink={"https://stay-easy-app.vercel.app/"}
+        title={"Jobibo: The job search app"}
+        overview={`
+Welcome to Jobibo, your ultimate job searching app. With dual account types for job seekers and recruiters, Jobibo streamlines the process. Job seekers can create profiles, explore tailored job listings, and apply seamlessly. Recruiters can showcase companies, post jobs, and manage applications efficiently.`}
+        imageArray={Jobibo}
+        toolused={jobibotools}
+        gitlink={"https://github.com/FAREED-3125/jobibo-client"}
+        applink={"https://jobibo-client.vercel.app/"}
         number={3}
+        imgpos="right"
       />
-      {/* project stayEasy container ends */}
+      {/* project jobibo container ends */}
+      {/* project gamespace starts */}
+      <ProjectComponent
+        title={"Gamespace-haven: game store"}
+        overview={
+          "GameSpace is a React-based app designed as a personal project to enhance skills in React development. It acts as a repository showcasing game details, developers, publishers, and other related information, aiding in skill advancement."
+        }
+        applink={"https://gamespace-haven.vercel.app/"}
+        gitlink={"https://github.com/FAREED-3125/Gamespace-haven"}
+        number={4}
+        imageArray={gamespace}
+        toolused={gamestools}
+      />
+      {/* project gamespace emds */}
       {/* inomation project starts  */}
       <ProjectComponent
         title={"Inomation: the animation company website"}
@@ -142,7 +90,7 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
         toolused={inoTools}
         gitlink={"https://github.com/FAREED-3125/Innomation"}
         applink={"https://innomation.vercel.app/"}
-        number={4}
+        number={5}
         imgpos="right"
       />
       {/* inomation project ends */}
@@ -185,284 +133,4 @@ Welcome to Jobibo, your ultimate job searching app. With dual account types for 
   );
 };
 
-const ProjectSlider = ({ images, imgpos }) => {
-  return (
-    <div>
-      <div className="w-full mx-auto">
-        <Swiper
-          modules={[Navigation]}
-          navigation={{
-            nextEl: ".next-button",
-            prevEl: ".prev-button",
-          }}
-          spaceBetween={10}
-          grabCursor={true}
-        >
-          {images.map((image, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <div
-                  key={index}
-                  className="lg:w-[80%] w-full aspect-square mx-auto lg:h-[550px] overflow-hidden rounded-lg"
-                  style={{
-                    margin: imgpos === "right" ? "0 0 0 auto" : "0 auto 0 0 ",
-                  }}
-                >
-                  <img
-                    src={image}
-                    className="w-full h-full object-fill"
-                    alt="image not found"
-                    decoding="async"
-                  />
-                </div>
-              </SwiperSlide>
-            );
-          })}
-          <div
-            className=" w-full h-[60px] flex items-center gap-4 relative  lg:w-[80%] "
-            style={{
-              justifyContent: imgpos === "right" ? "flex-end" : "flex-start",
-              margin: imgpos === "right" ? "0 0 0 auto" : "0 auto 0 0 ",
-            }}
-          >
-            <div className=" prev-button p-2 bg-primary text-[28px] w-max rounded-full cursor-pointer">
-              <AiOutlineSwapLeft />
-            </div>
-            <div className="next-button p-2 bg-primary text-[28px] w-max rounded-full cursor-pointer">
-              <AiOutlineSwapRight />
-            </div>
-            <div
-              className="absolute top-1 right-2 text-[12px] text-primary"
-              style={{
-                left: imgpos === "right" && ".5rem",
-                right: imgpos === "left" && ".5rem",
-              }}
-            >
-              <p className="flex items-center">
-                {imgpos === "right" ? "<<< slide" : "slide >>>"}
-              </p>
-            </div>
-          </div>
-        </Swiper>
-      </div>
-    </div>
-  );
-};
-
-const ProjectComponent = ({
-  title,
-  overview,
-  toolused,
-  imageArray,
-  gitlink,
-  applink,
-  number,
-  imgpos = "left",
-}) => {
-  const projectvariant = {
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-      },
-    },
-    hidden: {
-      opacity: 0,
-    },
-  };
-
-  const glowCont = useRef();
-
-  const divX = useMotionValue(0);
-  const divy = useMotionValue(0);
-  const { cursorSize } = useContext(GlowcursorContext);
-
-  const handleMouseIn = (e) => {
-    const { left, top } = glowCont.current.getBoundingClientRect();
-    divX.set(e.clientX - left);
-    divy.set(e.clientY - top);
-  };
-
-  const projectRef = useRef();
-
-  const { scrollYProgress } = useScroll({
-    target: projectRef,
-    offset: ["start end", "start start"],
-  });
-
-  const leftX = useTransform(scrollYProgress, [0, 0.5], [-100, 0]);
-  const rightX = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 1]);
-
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
-
-  return (
-    <m.div
-      initial="hidden"
-      whileInView="visible"
-      className="mt-[60px] md:mt-[60px] lg:mt-[100px] w-full mx-auto relative flex items-center justify-start "
-      style={{
-        justifyContent: imgpos == "left" ? "flex-start" : "flex-end",
-      }}
-      ref={projectRef}
-    >
-      {/* image slider */}
-      <m.div
-        variants={projectvariant}
-        className="md:w-[70%] hidden lg:block lg:w-[60%] md:mx-auto lg:m-0 text-black mt-5"
-        style={{
-          translateX: imgpos === "right" ? rightX : leftX,
-          opacity: opacity,
-        }}
-      >
-        <ProjectSlider images={imageArray} imgpos={imgpos} />
-      </m.div>
-      {/* project brief  */}
-      <m.div
-        className={
-          "w-full lg:w-[60%] top-[50%]   bg-slate-900/90 backdrop-blur-[10px]  h-max mt-4 lg:z-[999] lg:translate-y-[-60%] lg:rounded-lg flex items-start justify-center text-slate-300 lg:ring-[1px] ring-gray-600 cursor-default lg:absolute group "
-        }
-        style={{
-          left: imgpos === "right" && "0px",
-          right: imgpos === "left" && "0px",
-        }}
-        onMouseMove={handleMouseIn}
-        ref={glowCont}
-        onMouseEnter={() => cursorSize.set(0)}
-        onMouseLeave={() => cursorSize.set(20)}
-      >
-        {/* project detail section starts */}
-        <m.div
-          className="w-full   md:mt-[5%] md:mb-[5%] lg:my-0 lg:p-8 relative overflow-hidden p-[3px]"
-          style={{
-            scale,
-          }}
-        >
-          <m.div
-            className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
-            opacity-0
-            group-hover:opacity-[1] blur-[110px] pointer-events-none  bg-primary "
-            style={{
-              top: useMotionTemplate`${divy}px`,
-              left: useMotionTemplate`${divX}px`,
-              transform: "translate(-50%,-50%)",
-            }}
-          />
-          <p className="text-primary text-[12px] md:mx-auto md:w-[70%] lg:mx-0">
-            #{number} project
-          </p>
-          <h3 className="text-[30px] text-white font-[600] md:mx-auto md:w-[70%] lg:mx-0">
-            {title}
-          </h3>
-          {/* image slider */}
-          <m.div
-            variants={projectvariant}
-            className="md:w-[70%] lg:hidden lg:w-[60%] md:mx-auto lg:m-0 text-black mt-5"
-          >
-            <ProjectSlider images={imageArray} />
-          </m.div>
-          {/* overview container  */}
-          <div className="mt-3 md:mx-auto md:w-[70%] lg:w-full lg:mx-0">
-            <h2 className="text-[15px] text-slate-100 mb-3">overview</h2>
-            <p className="text-[15px] md:text-[15px] md:w-[%] lg:w-full font-[500]">
-              {overview}
-            </p>
-          </div>
-          {/* tool used container  */}
-          <div className="mt-4  lg:w-full md:mx-auto md:w-[70%] lg:mx-0">
-            <h2 className="text-[15px] text-slate-100 mb-3">Tools used</h2>
-            <div className="flex  flex-wrap gap-3 ">
-              {toolused.map((tool, index) => (
-                <div
-                  className="px-3 py-2 bg-yellow-900 text-primary rounded-full text-[13px]"
-                  key={index}
-                >
-                  {tool}
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* links container  */}
-          <div className="font-redhat text-[14px] text-slate-200 mt-6 flex items-center gap-5 md:mx-auto md:w-[70%] lg:mx-0">
-            <a
-              href={`${applink}`}
-              target="_blank"
-              className="flex items-center justify-center gap-3 w-[135px] h-[45px] ring-1 ring-slate-200 rounded-full cursor-pointer"
-            >
-              <span>visit app</span>
-              <span className="text-[18px]">
-                <MdOpenInNew />
-              </span>
-            </a>
-            <a
-              href={`${gitlink}`}
-              target="_blank"
-              className="flex items-center justify-center gap-3 w-[180px] h-[45px] ring-1 ring-slate-200 rounded-full cursor-pointer"
-            >
-              <span>git repository</span>
-              <span className="text-[18px]">
-                <AiFillGithub />
-              </span>
-            </a>
-          </div>
-        </m.div>{" "}
-        {/* project detail section ends */}
-      </m.div>
-    </m.div>
-  );
-};
 export default Projects;
-
-const NoteWorthy = ({ gitlink, applink, overview, title }) => {
-  const glowCont = useRef();
-
-  const divX = useMotionValue(0);
-  const divy = useMotionValue(0);
-  const { cursorSize } = useContext(GlowcursorContext);
-
-  const handleMouseIn = (e) => {
-    const { left, top } = glowCont.current.getBoundingClientRect();
-    divX.set(e.clientX - left);
-    divy.set(e.clientY - top);
-  };
-
-  return (
-    <m.div
-      className="text-slate-300 w-full min-h-[225px] mb-6 bg-black/40 backdrop-blur-[2px] rounded-lg p-3 ring-[1px] ring-gray-700 relative group overflow-hidden cursor-default"
-      onMouseMove={handleMouseIn}
-      ref={glowCont}
-      onMouseEnter={() => cursorSize.set(0)}
-      onMouseLeave={() => cursorSize.set(20)}
-    >
-      {" "}
-      <m.div
-        className="absolute w-[150px] h-[150px] rounded-full hidden lg:block 
-            opacity-0
-            group-hover:opacity-[1] blur-[110px] pointer-events-none  bg-primary "
-        style={{
-          top: useMotionTemplate`${divy}px`,
-          left: useMotionTemplate`${divX}px`,
-          transform: "translate(-50%,-50%)",
-        }}
-      />
-      {/* projecty heading starts */}{" "}
-      <div className="flex item-center justify-between text-[18px] text-white">
-        <h3>{title}</h3>
-        <div className="flex items-center gap-4 text-[25px]">
-          <a href={applink}>
-            <MdOpenInNew />
-          </a>
-          <a href={gitlink}>
-            <AiFillGithub />
-          </a>
-        </div>
-      </div>
-      {/* projecty heading ends */}
-      {/* project body starts  */}
-      <div className="mt-6 text-[.8rem] text-gray3400  lg:text-[.9rem]">
-        <p>{overview}</p>
-      </div>
-      {/* project body ends */}
-    </m.div>
-  );
-};
