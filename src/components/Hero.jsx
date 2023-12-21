@@ -95,7 +95,7 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.1}
-                className=" font-[900] text-white  text-[clamp(30px,6vw,70px)]"
+                className=" font-[900] text-white  text-[clamp(33px,6vw,75px)]"
               >
                 <p>Umar fareed</p>
               </m.div>
@@ -108,7 +108,7 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.2}
-                className="  font-[900] text-white   text-[clamp(30px,6vw,70px)]"
+                className="  font-[900] text-white   text-[clamp(33px,6vw,75px)]"
               >
                 <p className="text-slate-400">and I build things for web.</p>
               </m.div>
@@ -119,7 +119,7 @@ const Hero = () => {
               onMouseLeave={() => cursorSize.set(20)}
             >
               <m.div variants={textVariant} custom={1.3} className="mt-3">
-                <p className="text-[13px]  text-slate-200 lg:text-[16px] md:w-[70%] lg:w-[65%]">
+                <p className="text-[14px]  text-slate-200 lg:text-[16px] md:w-[70%] lg:w-[65%]">
                   I'm a Mern stack developer have done projects in building and
                   designing web applications. Currently I am eagerly awaiting
                   the opportunity to join a reputable company for an enriching
@@ -132,10 +132,10 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.4}
-                className="md:w-[250px] w-[200px] h-[60px] ring-1 ring-primary rounded-lg flex items-center justify-center text-primary gap-4 mt-10 font-redhat cursor-pointer"
+                className="px-5 h-[60px] ring-1 ring-primary rounded-lg flex items-center justify-center text-primary gap-4 mt-10 font-redhat cursor-pointer"
                 onClick={() => lenis.scrollTo("#projects")}
               >
-                <p className="text-[14px] md:text-[16px]">view my projects</p>
+                <p className="text-[15px] md:text-[16px]">view my projects</p>
                 <p className="text-[18px]">
                   {" "}
                   <BsFillArrowDownRightCircleFill />
