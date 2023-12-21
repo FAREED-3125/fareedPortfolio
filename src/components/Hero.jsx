@@ -3,7 +3,7 @@ import { motion as m } from "framer-motion";
 import { BsFillArrowDownRightCircleFill } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { LuLinkedin } from "react-icons/lu";
-import { ImDribbble } from "react-icons/im";
+import { ImGithub } from "react-icons/im";
 import { lenisContext } from "../App";
 import { GlowcursorContext } from "./Glowcursor";
 const Hero = () => {
@@ -76,7 +76,7 @@ const Hero = () => {
         </m.div>
         {/* sliding up page animation container ends */}
         {/* Text-container starts */}
-        <div className="overflow-hidden w-full h-[700px] mt-10 lg:mt-10    flex justify-center flex-col gap-0">
+        <div className="overflow-hidden w-full py-[50px] mt-10 lg:mt-10    flex justify-center flex-col gap-0">
           <div className="w-[90%] md:w-[85%] lg:w-[70%] mx-auto ">
             <div className="overflow-hidden">
               <m.div
@@ -95,7 +95,7 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.1}
-                className="  text-[36px] font-[900] text-white md:text-[50px] lg:text-[70px]"
+                className=" font-[900] text-white  text-[clamp(36px,6vw,70px)]"
               >
                 <p>Umar fareed</p>
               </m.div>
@@ -108,7 +108,7 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.2}
-                className="  text-[36px] font-[900] text-white md:text-[50px] lg:text-[70px]"
+                className="  font-[900] text-white   text-[clamp(36px,6vw,70px)]"
               >
                 <p className="text-slate-400">and I build things for web.</p>
               </m.div>
@@ -168,8 +168,8 @@ const Hero = () => {
                 </a>
               </div>
               <div className="d bg-yellow-900 p-3 rounded-full hover:scale-[1.2] transition-all duration-[.3s]">
-                <a href="https://dribbble.com/FAREED_3125">
-                  <ImDribbble />
+                <a href="https://github.com/FAREED-3125?tab=repositories">
+                  <ImGithub />
                 </a>
               </div>
             </m.div>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { LuLinkedin } from "react-icons/lu";
-import { ImDribbble } from "react-icons/im";
+import { ImDribbble, ImGithub } from "react-icons/im";
 import { GlowcursorContext } from "./Glowcursor";
 const Footer = () => {
   const { cursorSize } = useContext(GlowcursorContext);
@@ -53,10 +53,10 @@ const Footer = () => {
               <LuLinkedin />
             </a>
             <a
-              href="https://dribbble.com/FAREED_3125"
+              href="https://github.com/FAREED-3125?tab=repositories"
               className="hover:text-primary hover:scale-[1.2] transition-all duration-[.3s]"
             >
-              <ImDribbble />
+              <ImGithub />
             </a>
           </div>
           <div className="mt-5 text-[13px] font-redhat text-slate-200 ">
