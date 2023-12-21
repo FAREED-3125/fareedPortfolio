@@ -95,7 +95,7 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.1}
-                className=" font-[900] text-white  text-[clamp(33px,6vw,75px)]"
+                className=" font-[900] text-white  text-[clamp(33px,6vw,70px)]"
               >
                 <p>Umar fareed</p>
               </m.div>
@@ -108,7 +108,7 @@ const Hero = () => {
               <m.div
                 variants={textVariant}
                 custom={1.2}
-                className="  font-[900] text-white   text-[clamp(33px,6vw,75px)]"
+                className="  font-[900] text-white   text-[clamp(33px,6vw,70px)]"
               >
                 <p className="text-slate-400">and I build things for web.</p>
               </m.div>
