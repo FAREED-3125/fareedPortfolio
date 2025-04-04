@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { LuLinkedin } from "react-icons/lu";
-import { ImDribbble, ImGithub } from "react-icons/im";
+import { ImGithub } from "react-icons/im";
 import { GlowcursorContext } from "./Glowcursor";
 const Footer = () => {
   const { cursorSize } = useContext(GlowcursorContext);
